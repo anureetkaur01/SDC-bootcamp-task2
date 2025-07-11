@@ -72,36 +72,39 @@ const Home = () => {
       </motion.div>
 
       {/* Features Grid */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-      >
-        {features.map((feature, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 + 0.3 }}
-          >
-            <Card className="text-center h-full">
-              <CardContent className="pt-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl mb-4 group-hover:scale-110 transition-transform">
-                  <feature.icon className="h-6 w-6 text-primary-600" />
-                </div>
-                <h3 className="text-lg font-semibold font-heading text-secondary-900 dark:text-white mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-secondary-600 dark:text-secondary-400 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-          
-        ))}
+      {/* Features Grid */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+>
+  {features.map((feature, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 + 0.3 }}
+    >
+      <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+        <Card className="text-center h-full">
+          <CardContent className="pt-6">
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-xl mb-4 group-hover:scale-110 transition-transform">
+              <feature.icon className="h-6 w-6 text-primary-600" />
+            </div>
+            <h3 className="text-lg font-semibold font-heading text-secondary-900 dark:text-white mb-2">
+              {feature.title}
+            </h3>
+            <p className="text-secondary-600 dark:text-secondary-400 text-sm leading-relaxed">
+              {feature.description}
+            </p>
+          </CardContent>
+        </Card>
       </motion.div>
+    </motion.div>
+  ))}
+</motion.div>
+
 
       {/* AI Showcase Section */}
       <motion.div
