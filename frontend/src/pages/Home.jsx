@@ -113,9 +113,13 @@ const Home = () => {
       >
         <Card className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-primary-950 dark:to-accent-950 border-primary-200 dark:border-primary-800">
           <CardContent className="text-center py-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-2xl mb-6">
+             <motion.div
+        animate={{ y: [0, -5, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-2xl mb-6"
+      >
               <Brain className="h-8 w-8 text-white" />
-            </div>
+            </motion.div>
             <h2 className="text-3xl font-bold font-heading text-secondary-900 dark:text-white mb-4">
               Powered by Advanced AI
             </h2>
