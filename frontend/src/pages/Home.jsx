@@ -58,7 +58,13 @@ const Home = () => {
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
-          <Button variant="outline" size="lg" className="group">
+          <Button variant="outline" 
+          size="lg" 
+          className="group"
+          onClick={() => {
+    document.getElementById('ai-showcase')?.scrollIntoView({ behavior: 'smooth' });
+  }}
+          >
             <Sparkles className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
             See AI in Action
           </Button>
@@ -93,11 +99,13 @@ const Home = () => {
               </CardContent>
             </Card>
           </motion.div>
+          
         ))}
       </motion.div>
 
       {/* AI Showcase Section */}
       <motion.div
+        id="ai-showcase"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
