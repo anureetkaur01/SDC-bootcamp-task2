@@ -4,6 +4,7 @@ import { ArrowRight, FileText, Zap, Shield, Download, Brain, Sparkles } from 'lu
 import { Card, CardContent } from '../components/Card'
 import Button from '../components/Button'
 import AIBadge from '../components/AIBadge'
+import { Typewriter } from 'react-simple-typewriter'
 
 const Home = () => {
   const features = [
@@ -39,10 +40,16 @@ const Home = () => {
         className="text-center max-w-4xl mx-auto mb-16"
       >
         <div className="flex items-center justify-center mb-6">
-          <h1 className="text-5xl md:text-6xl font-bold font-heading text-secondary-900 dark:text-white">
-            Convert PDF to{' '}
-            <span className="text-primary-600">PowerPoint</span>
-          </h1>
+        <h1 className="text-4xl md:text-6xl font-bold font-heading text-secondary-900 dark:text-white">
+  <Typewriter
+    words={['Convert PDF to PowerPoint']}
+    cursor
+    cursorStyle="|"
+    typeSpeed={70}
+    deleteSpeed={50}
+    delaySpeed={2000}
+  />
+</h1>
           <AIBadge className="ml-4" />
         </div>
         
